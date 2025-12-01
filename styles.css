@@ -1,0 +1,397 @@
+/* ========== GLOBAL RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========== BASE BODY ========== */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #fdf5ff, #f6f9ff);
+    color: #222;
+    line-height: 1.6;
+}
+
+/* ========== HEADER / NAVIGATION ========== */
+.site-header {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 2px solid #f1d2ff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    padding: 12px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo a {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #3a215f;
+}
+
+.site-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+}
+
+.site-nav a {
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #555;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+.site-nav a.active,
+.site-nav a:hover {
+    color: #3a215f;
+    border-bottom-color: #f28bbf;
+}
+
+/* ========== MAIN WHITE CARD LAYOUT ========== */
+.page-content {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto 60px auto;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    padding: 40px 32px 48px 32px;
+
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideInPage 1s ease-out forwards;
+}
+
+@keyframes slideInPage {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== HOME HERO (SPLIT LAYOUT) ========== */
+.home-page .hero-split {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+    gap: 40px;
+    align-items: center;
+}
+
+/* LEFT SIDE */
+.hero-left { position: relative; }
+
+.hero-label {
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #c08be8;
+    margin-bottom: 10px;
+}
+
+.hero-name {
+    font-size: 40px;
+    line-height: 1.1;
+    color: #3a215f;
+    margin-bottom: 14px;
+}
+
+.hero-name span { color: #f06292; }
+
+.hero-intro {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 18px;
+}
+
+/* TRAIT PILLS */
+.trait-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.trait-pill {
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: #fbe7ff;
+    border: 1px solid #f0c9ff;
+    font-size: 12px;
+    color: #3a215f;
+}
+
+/* HERO BUTTONS */
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* ========== HERO RIGHT SIDE (PHOTO + INFO CARD) ========== */
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+}
+
+.hero-photo-frame {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(135deg, #ffd6ef, #d9c9ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-photo-frame img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+}
+
+/* INFO CARD */
+.info-card {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #f0e2ff;
+    padding: 16px 18px;
+    box-shadow: 0 6px 18px rgba(58, 33, 95, 0.08);
+}
+
+.info-card h2 {
+    font-size: 18px;
+    color: #3a215f;
+    margin-bottom: 8px;
+}
+
+.info-card ul {
+    list-style: none;
+    font-size: 14px;
+    color: #555;
+}
+
+.info-card li { margin-bottom: 4px; }
+
+/* ========== GENERIC SECTIONS ========== */
+.section {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    font-size: 22px;
+    color: #3a215f;
+    margin-bottom: 8px;
+    border-left: 4px solid #f28bbf;
+    padding-left: 10px;
+}
+
+/* PAGE TITLES */
+.about-hero h1,
+.education-hero h1,
+.experience-hero h1,
+.projects-hero h1,
+.contact-hero h1,
+.skills-hero h1 {
+    font-size: 28px;
+    color: #3a215f;
+    margin-bottom: 8px;
+}
+
+/* SUBTEXT */
+.education-subtext,
+.experience-subtext,
+.projects-subtext,
+.contact-subtext {
+    font-size: 15px;
+    color: #555;
+}
+
+/* ========== BUTTONS ========== */
+.button,
+.button-outline {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 6px;
+    font-size: 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.18s ease-in-out;
+}
+
+.button {
+    background: #f06292;
+    color: #fff;
+    border: 1px solid #f06292;
+}
+
+.button:hover {
+    background: #e0487d;
+    border-color: #e0487d;
+}
+
+.button-outline {
+    background: transparent;
+    color: #f06292;
+    border: 1px solid #f06292;
+}
+
+.button-outline:hover {
+    background: #f06292;
+    color: #fff;
+}
+
+/* ========== CARDS ========== */
+.education-card,
+.experience-item,
+.project-card,
+.contact-card {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #f0e2ff;
+    padding: 18px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 12px rgba(58, 33, 95, 0.05);
+}
+
+.education-card h2,
+.experience-item h3,
+.project-card h2,
+.contact-card h2 {
+    font-size: 18px;
+    color: #3a215f;
+    margin-bottom: 6px;
+}
+
+.education-meta,
+.experience-meta,
+.project-meta {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+/* LISTS */
+.education-card ul,
+.experience-item ul,
+.project-card ul {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.education-card ul li,
+.experience-item ul li,
+.project-card ul li {
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+/* ========== CONTACT GRID ========== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+/* ========== ABOUT SIDEBAR ========== */
+.about-sidebar { margin-top: 30px; }
+
+.about-sidebar .contact-card { max-width: 350px; }
+
+/* ========== EDUCATION LOGOS ========== */
+.edu-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.edu-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* ========== SKILL BUBBLES ========== */
+.skill-bubble {
+    padding: 14px 26px;
+    background: linear-gradient(135deg, #f9d9ff, #dfe9ff);
+    border-radius: 50px;
+    border: 2px solid #f0c9ff;
+    font-size: 15px;
+    color: #3a215f;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(58, 33, 95, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-bubble:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(58, 33, 95, 0.15);
+}
+
+/* ========== FOOTER ========== */
+.site-footer {
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    font-size: 13px;
+    color: #777;
+    background: #ffffff;
+    border-top: 1px solid #f1d2ff;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 800px) {
+
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .site-nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .page-content {
+        padding: 28px 18px 36px 18px;
+    }
+
+    .home-page .hero-split {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-right {
+        align-items: flex-start;
+    }
+
+    .hero-photo-frame {
+        width: 190px;
+        height: 190px;
+    }
+
+    .hero-name {
+        font-size: 32px;
+    }
+}
